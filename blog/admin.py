@@ -3,6 +3,7 @@ from .models import Post, Comment
 from django_summernote.admin import SummernoteModelAdmin
 
 
+# Registering the Post model with the admin site.
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
 
@@ -13,6 +14,7 @@ class PostAdmin(SummernoteModelAdmin):
     summernote_fields = ('content',)
 
 
+# Registering the Comment model with the admin site.
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
     list_display = ('name', 'body', 'post', 'created_on', 'approved')
